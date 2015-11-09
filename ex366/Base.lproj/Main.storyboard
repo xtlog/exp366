@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ex366" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +17,62 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgu-E2-DIC">
+                                <rect key="frame" x="0.0" y="28" width="600" height="198"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ete-f4-n73">
+                                        <rect key="frame" x="281" y="83" width="39" height="37"/>
+                                    </pageControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="75:16" constant="-328.125" id="51u-Jm-qoK"/>
+                                    <constraint firstItem="ete-f4-n73" firstAttribute="centerX" secondItem="kgu-E2-DIC" secondAttribute="centerX" id="B47-fr-2hl"/>
+                                    <constraint firstAttribute="trailing" secondItem="ete-f4-n73" secondAttribute="trailing" constant="280" id="CBs-Cf-qKa"/>
+                                    <constraint firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="75:16" constant="-328.125" id="Do5-Jg-B15"/>
+                                    <constraint firstItem="ete-f4-n73" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="top" constant="83" id="HaF-Rp-S9Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="ete-f4-n73" secondAttribute="bottom" constant="78" id="KaK-bc-wOG"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOr-9f-sAg">
+                                <rect key="frame" x="0.0" y="236" width="600" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoy-7S-2mZ">
+                                        <rect key="frame" x="277" y="18" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heB-jr-B3K">
+                                        <rect key="frame" x="546" y="18" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jQ-CL-PgB">
+                                        <rect key="frame" x="8" y="18" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JOr-9f-sAg" firstAttribute="leading" secondItem="kgu-E2-DIC" secondAttribute="leading" id="4Dx-jh-xAU"/>
+                            <constraint firstItem="JOr-9f-sAg" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="bottom" constant="10" id="Rpn-ae-Pei"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JOr-9f-sAg" secondAttribute="bottom" constant="255" id="Z78-mj-S0X"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fhr-SO-kjG"/>
+                            <constraint firstAttribute="trailing" secondItem="kgu-E2-DIC" secondAttribute="trailing" id="js1-7e-dqp"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="rfI-BQ-6Qh"/>
+                            <constraint firstItem="JOr-9f-sAg" firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="100:33" id="yhU-36-xjo"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imagePctl" destination="ete-f4-n73" id="EnK-E1-pbd"/>
+                        <outlet property="imageScroll" destination="kgu-E2-DIC" id="hkh-r0-WoC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="288" y="216"/>
         </scene>
     </scenes>
 </document>
