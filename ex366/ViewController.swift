@@ -67,7 +67,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     //图片数据
                     //let wimage:SDImageCache = SDImageCache();
                     imageView.sd_setImageWithURL(imgurl)
-                    //let data = NSData(contentsOfURL: imgurl!)
+                    
                     //imageView.image = UIImage(data: data!)
                     self.imageScroll.showsHorizontalScrollIndicator = false;//不设置水平滚动条；
                     self.imageScroll.addSubview(imageView);//把图片加入到ScrollView中去，实现轮播的效果；
