@@ -9,31 +9,104 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var imageScroll: UIScrollView!
     
     @IBOutlet weak var imagePctl: UIPageControl!
     
+    @IBOutlet weak var dataTable: UITableView!
+    
     var timer:NSTimer!
     
-    
+    var arrs = [DataPlace]()
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         
         //let testObejct : AVObject = AVObject(className: "TestObject")
         //testObejct["foo"] = " test success"
         //testObejct.save()
         
+        pictureGallery()
+        setAttrData()
         
-        
-        
-        pictureGallery();
-        
+        self.dataTable.registerNib(UINib(nibName:"CustomTableViewCell", bundle:nil), forCellReuseIdentifier:"CustomTableViewCell")
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func setAttrData(){
+
+        //加载列表数据
+        let query : AVQuery = AVQuery(className: "Experts")
+        
+        query.findObjectsInBackgroundWithBlock { (result, err) -> Void in
+            if ((err) != nil){
+                NSLog("loadData error", result.count)
+            }else{
+                let totalCount:NSInteger = result.count;//轮播的图片数量；
+                for index in 0..<totalCount{
+                    let object:AVObject = result[index] as! AVObject;
+                    let place = DataPlace()
+                    place.title = object.objectForKey("title") as! String
+                    place.explain = object.objectForKey("explain") as! String
+                    place.titleImg = object.objectForKey("titleImg") as! String
+                    place.credate = object.objectForKey("credate") as! String
+                    
+                    self.arrs.append(place)
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    // 数据源方法, 返回多少组
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    // 每组有多少行
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return arrs.count;
+    }
+    
+    func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) ->CGFloat{
+        
+        return 120.0
+    }
+    
+    // 每行展示什么内容
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTableViewCell", forIndexPath: indexPath) as! CustomTableViewCell
+        
+        let place = arrs[indexPath.row]
+        
+        cell.title.text = place.title
+        cell.titleImage.sd_setImageWithURL(NSURL(string:place.titleImg))
+        cell.explain.text = place.explain
+        cell.credate.text = place.credate
+        
+        return cell;
+        
+    }
+    
+    // 点击每个cell触发什么事件
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.backgroundColor = UIColor.clearColor()
+
+        cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+
+     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

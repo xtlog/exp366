@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,54 +18,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpm-mm-k3H">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="366好专家" id="nNE-6d-zN5"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="nNE-6d-zN5" id="owO-R4-9dP"/>
+                                </connections>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qge-6T-wyz">
+                                <rect key="frame" x="0.0" y="276" width="600" height="26"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77q-Sy-BAa">
+                                        <rect key="frame" x="277" y="-2" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piq-MI-oeX">
+                                        <rect key="frame" x="514" y="-2" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0FE-hV-hpf">
+                                        <rect key="frame" x="40" y="-2" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0FE-hV-hpf" firstAttribute="centerY" secondItem="Qge-6T-wyz" secondAttribute="centerY" id="3db-Lm-uYM"/>
+                                    <constraint firstItem="0FE-hV-hpf" firstAttribute="baseline" secondItem="77q-Sy-BAa" secondAttribute="baseline" id="LSk-DN-NOA"/>
+                                    <constraint firstItem="0FE-hV-hpf" firstAttribute="leading" secondItem="Qge-6T-wyz" secondAttribute="leading" constant="40" id="Vju-Sy-VBz"/>
+                                    <constraint firstItem="77q-Sy-BAa" firstAttribute="centerX" secondItem="Qge-6T-wyz" secondAttribute="centerX" id="dyh-RU-5mh"/>
+                                    <constraint firstAttribute="trailing" secondItem="piq-MI-oeX" secondAttribute="trailing" constant="40" id="nFQ-HX-KTZ"/>
+                                    <constraint firstItem="0FE-hV-hpf" firstAttribute="baseline" secondItem="piq-MI-oeX" secondAttribute="baseline" id="yAm-PV-26k"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OaR-Ep-JYk">
+                                <rect key="frame" x="0.0" y="310" width="600" height="245"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="245" id="QAd-si-wps"/>
+                                </constraints>
+                            </tableView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgu-E2-DIC">
-                                <rect key="frame" x="0.0" y="28" width="600" height="198"/>
+                                <rect key="frame" x="0.0" y="68" width="600" height="200"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ete-f4-n73">
-                                        <rect key="frame" x="281" y="83" width="39" height="37"/>
+                                        <rect key="frame" x="573" y="161" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="75:16" constant="-328.125" id="51u-Jm-qoK"/>
-                                    <constraint firstItem="ete-f4-n73" firstAttribute="centerX" secondItem="kgu-E2-DIC" secondAttribute="centerX" id="B47-fr-2hl"/>
-                                    <constraint firstAttribute="trailing" secondItem="ete-f4-n73" secondAttribute="trailing" constant="280" id="CBs-Cf-qKa"/>
-                                    <constraint firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="75:16" constant="-328.125" id="Do5-Jg-B15"/>
-                                    <constraint firstItem="ete-f4-n73" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="top" constant="83" id="HaF-Rp-S9Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="ete-f4-n73" secondAttribute="bottom" constant="78" id="KaK-bc-wOG"/>
+                                    <constraint firstItem="ete-f4-n73" firstAttribute="leading" secondItem="kgu-E2-DIC" secondAttribute="leading" constant="573" id="2LS-5I-NOd"/>
+                                    <constraint firstItem="ete-f4-n73" firstAttribute="trailing" secondItem="kgu-E2-DIC" secondAttribute="trailingMargin" constant="20" id="6Ns-dV-Y7v"/>
+                                    <constraint firstAttribute="bottom" secondItem="ete-f4-n73" secondAttribute="bottom" id="936-Hf-l2d"/>
+                                    <constraint firstItem="ete-f4-n73" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="top" constant="161" id="sOF-c3-842"/>
+                                    <constraint firstAttribute="height" constant="200" id="yV1-LZ-LAp"/>
                                 </constraints>
-                            </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOr-9f-sAg">
-                                <rect key="frame" x="0.0" y="236" width="600" height="65"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zoy-7S-2mZ">
-                                        <rect key="frame" x="277" y="18" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heB-jr-B3K">
-                                        <rect key="frame" x="546" y="18" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jQ-CL-PgB">
-                                        <rect key="frame" x="8" y="18" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="nNE-6d-zN5" id="lVq-rY-Xip"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JOr-9f-sAg" firstAttribute="leading" secondItem="kgu-E2-DIC" secondAttribute="leading" id="4Dx-jh-xAU"/>
-                            <constraint firstItem="JOr-9f-sAg" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="bottom" constant="10" id="Rpn-ae-Pei"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JOr-9f-sAg" secondAttribute="bottom" constant="255" id="Z78-mj-S0X"/>
-                            <constraint firstItem="kgu-E2-DIC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="fhr-SO-kjG"/>
-                            <constraint firstAttribute="trailing" secondItem="kgu-E2-DIC" secondAttribute="trailing" id="js1-7e-dqp"/>
-                            <constraint firstItem="kgu-E2-DIC" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="rfI-BQ-6Qh"/>
-                            <constraint firstItem="JOr-9f-sAg" firstAttribute="width" secondItem="kgu-E2-DIC" secondAttribute="height" multiplier="100:33" id="yhU-36-xjo"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="8Ev-wq-OMQ"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="trailing" secondItem="Qge-6T-wyz" secondAttribute="trailing" id="A03-2u-4nK"/>
+                            <constraint firstItem="Qge-6T-wyz" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="APf-b5-5c0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="OaR-Ep-JYk" secondAttribute="bottom" constant="1" id="BLU-1b-gWR"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="CAB-7M-8HV"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="top" secondItem="Zpm-mm-k3H" secondAttribute="bottom" constant="4" id="DSm-Ad-4d3"/>
+                            <constraint firstItem="Qge-6T-wyz" firstAttribute="top" secondItem="kgu-E2-DIC" secondAttribute="bottom" constant="8" symbolic="YES" id="Dbe-aw-tHF"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="Klg-xp-jUd"/>
+                            <constraint firstItem="Zpm-mm-k3H" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="NK4-RM-Gll"/>
+                            <constraint firstItem="Zpm-mm-k3H" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="P5p-Da-7Ru"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="top" secondItem="Zpm-mm-k3H" secondAttribute="bottom" constant="4" id="P6Z-6b-bpY"/>
+                            <constraint firstItem="Zpm-mm-k3H" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Zey-de-Jo0"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="leading" secondItem="Qge-6T-wyz" secondAttribute="leading" id="Zqp-7P-X30"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OaR-Ep-JYk" secondAttribute="trailing" constant="-20" id="d65-d1-9KN"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="top" secondItem="Qge-6T-wyz" secondAttribute="bottom" constant="8" symbolic="YES" id="e4s-Qf-gML"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gve-l7-Rav"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ilB-YD-Dvt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qge-6T-wyz" secondAttribute="trailing" constant="-20" id="n0B-4c-Tk4"/>
+                            <constraint firstItem="OaR-Ep-JYk" firstAttribute="leading" secondItem="kgu-E2-DIC" secondAttribute="leading" id="oVG-rY-R02"/>
+                            <constraint firstItem="Qge-6T-wyz" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ttU-9a-vCm"/>
+                            <constraint firstItem="kgu-E2-DIC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="u3k-br-s2U"/>
+                            <constraint firstItem="Zpm-mm-k3H" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="yYn-xs-Wn8"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dataTable" destination="OaR-Ep-JYk" id="lsM-tc-vDw"/>
                         <outlet property="imagePctl" destination="ete-f4-n73" id="EnK-E1-pbd"/>
                         <outlet property="imageScroll" destination="kgu-E2-DIC" id="hkh-r0-WoC"/>
                     </connections>
@@ -75,4 +118,5 @@
             <point key="canvasLocation" x="288" y="216"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.26675073760000001" green="0.53449652160000005" blue="0.97634548610000005" alpha="1" colorSpace="calibratedRGB"/>
 </document>

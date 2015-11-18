@@ -21,6 +21,9 @@
 		3EB645131BD79380005DB513 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB645121BD79380005DB513 /* AVOSCloud.framework */; };
 		3EB645151BD793E4005DB513 /* AVOSCloud.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB645121BD79380005DB513 /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3EBD5DD31BF03176008CF8D1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EBD5DD21BF03176008CF8D1 /* ImageIO.framework */; };
+		548114991BFC6B1800E49F2B /* DataPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548114981BFC6B1800E49F2B /* DataPlace.swift */; };
+		5481149C1BFC704400E49F2B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5481149A1BFC704400E49F2B /* CustomTableViewCell.swift */; };
+		5481149D1BFC704400E49F2B /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5481149B1BFC704400E49F2B /* CustomTableViewCell.xib */; };
 		B27D9F0AC40BB6FFDE6A009C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BED82E3D5307CF6B3F9AFF1 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		3EB6450E1BD79196005DB513 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3EB645121BD79380005DB513 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		3EBD5DD21BF03176008CF8D1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		548114981BFC6B1800E49F2B /* DataPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlace.swift; sourceTree = "<group>"; };
+		5481149A1BFC704400E49F2B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5481149B1BFC704400E49F2B /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		84E4F0FFF406DD3C622BF145 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D9DCC644C22611A839F5EB19 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,9 @@
 				3EB644B31BD78DFE005DB513 /* LaunchScreen.xib */,
 				3EB644A81BD78DFE005DB513 /* Supporting Files */,
 				3EB645031BD790ED005DB513 /* ex366-Bridging-Header.h */,
+				548114981BFC6B1800E49F2B /* DataPlace.swift */,
+				5481149A1BFC704400E49F2B /* CustomTableViewCell.swift */,
+				5481149B1BFC704400E49F2B /* CustomTableViewCell.xib */,
 			);
 			path = ex366;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 			files = (
 				3EB644B01BD78DFE005DB513 /* Main.storyboard in Resources */,
 				3EB644B51BD78DFE005DB513 /* LaunchScreen.xib in Resources */,
+				5481149D1BFC704400E49F2B /* CustomTableViewCell.xib in Resources */,
 				3EB644B21BD78DFE005DB513 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB644AD1BD78DFE005DB513 /* ViewController.swift in Sources */,
+				548114991BFC6B1800E49F2B /* DataPlace.swift in Sources */,
+				5481149C1BFC704400E49F2B /* CustomTableViewCell.swift in Sources */,
 				3EB644AB1BD78DFE005DB513 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +485,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/xtlog/Downloads,
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
@@ -503,7 +514,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
-					/Users/xtlog/Downloads,
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
